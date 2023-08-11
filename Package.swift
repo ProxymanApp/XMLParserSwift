@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "XMLParserSwiftPM",
+    name: "XMLParserSwift",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "XMLParserSwiftPM",
-            targets: ["XMLParserSwiftPM"]),
+            name: "XMLParserSwift",
+            targets: ["XMLParserSwift"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -19,10 +19,24 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "XMLParserSwiftPM",
-            dependencies: []),
+            name: "XMLParserSwift",
+            dependencies: ["GDataXMLNode"],
+            path: "Sources",
+            sources: ["XMLParserSwift.swift"]
+        ),
+        .target(
+            name: "GDataXMLNode",
+            dependencies: [],
+            path: "Sources",
+            sources: ["GDataXMLNode.m"],
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("include"),
+                .unsafeFlags(["-fno-objc-arc"]) // Use this flag to compile without ARC
+            ]
+        ),
         .testTarget(
-            name: "XMLParserSwiftPMTests",
-            dependencies: ["XMLParserSwiftPM"]),
+            name: "XMLParserSwiftTests",
+            dependencies: ["XMLParserSwift"]),
     ]
 )
