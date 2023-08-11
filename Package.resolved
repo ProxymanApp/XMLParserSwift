@@ -1,0 +1,13 @@
+{
+  "pins" : [
+    {
+      "identity" : "xmlparserswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ProxymanApp/XMLParserSwift",
+      "state" : {
+        "revision" : "da8ce4088d632372b10f33f5415b99465c11b100"
+      }
+    }
+  ],
+  "version" : 2
+}
