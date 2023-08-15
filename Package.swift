@@ -30,11 +30,7 @@ let package = Package(
             dependencies: [],
             path: "Sources",
             sources: ["GDataXMLNode.m"],
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath("include"),
-                .unsafeFlags(["-fno-objc-arc"]) // Use this flag to compile without ARC
-            ]
+            publicHeadersPath: "include"
         ),
         .testTarget(
             name: "XMLParserSwiftTests",
